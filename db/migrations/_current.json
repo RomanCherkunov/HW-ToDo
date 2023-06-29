@@ -1,0 +1,88 @@
+{
+    "tables": {
+        "todos": {
+            "tableName": "todos",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "description": {
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "isDone": {
+                    "defaultValue": {
+                        "value": false
+                    },
+                    "field": "isDone",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "todoUserId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "todoUsers",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "todoUserId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "todoUsers": {
+            "tableName": "todoUsers",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "path": "C:\\Program Files (x86)\\Reference Assemblies\\MSProjects\\sacred\\homeworks\\HW-ToDo\\db\\migrations\\_current.json",
+    "backupPath": "C:\\Program Files (x86)\\Reference Assemblies\\MSProjects\\sacred\\homeworks\\HW-ToDo\\db\\migrations\\_current_bak.json",
+    "exists": true,
+    "revision": 5
+}

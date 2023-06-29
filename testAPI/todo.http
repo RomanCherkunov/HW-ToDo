@@ -1,0 +1,35 @@
+GET http://localhost:8989/todo
+content-type: application/json
+
+{
+    # "description": "5"
+}
+
+###
+
+POST http://localhost:8989/todo
+content-type: application/json
+id: 1
+
+{
+    "description": "test todo number 9"
+}
+
+###
+
+PUT http://localhost:8989/todo
+content-type: application/json
+
+{
+    "id": 2,
+    "description": "test todo number 2 was updated"
+}
+
+###
+
+DELETE http://localhost:8989/todo
+content-type: application/json
+
+{
+    "id": 4
+}
