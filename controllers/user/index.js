@@ -24,9 +24,10 @@ const get = (req, res) => {
       todoUser.findAll({
         include: [
             {
-                model: todo
+                model: todo,
+                where : {todoUserId: id}
             }
-        ],where : {id}
+        ]
     }).then(data => {
       console.log(data)
       const items = data.map((item) => item.toJSON())

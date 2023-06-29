@@ -1,15 +1,15 @@
 GET http://localhost:8989/todo
 content-type: application/json
-id: 1
+id: 6
 
 ###
 
 POST http://localhost:8989/todo
 content-type: application/json
-id: 1
+id: 8
 
 {
-    "description": "test todo number 9"
+    "description": "test todo number 6"
 }
 
 ###
