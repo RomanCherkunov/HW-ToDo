@@ -1,9 +1,6 @@
 GET http://localhost:8989/todo
 content-type: application/json
-
-{
-    # "description": "5"
-}
+id: 1
 
 ###
 

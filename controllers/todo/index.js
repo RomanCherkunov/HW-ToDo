@@ -1,30 +1,17 @@
-const { Op } = require("sequelize");
+
 const { todo } = require("../../db/models");
-const user = require("../../db/models/todoUser");
+
 // const { checkVal } = require("../../utils");
 
-// const getURI = (req, res) => {
-//   const { id } = req.params;
-
-//   user
-//     .findOne({ where: { id } })
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       res.status(500).send(err);
-//     });
-// };
 
 const get = (req, res) => {
   const { limit, offset } = req.query;
-  const description = req.body.description
-
-  const where = description ? { description: { [Op.getLike()]: `%${description}%` } } : null;
+  const {todoUserId, ...others} = req.body
+  const {id} = req.headers
 
   todo
-    .findAndCountAll({
-      where,
+    .findAll({
+      where: {todoUserId: id},
       ...(limit ? { limit } : {}),
       ...(offset ? { offset } : {}),
     })
@@ -34,14 +21,6 @@ const get = (req, res) => {
     .catch((err) => {
       res.status(500).send(err);
     });
-
-    // todo.findAll({
-    //     include: [
-    //         {
-    //             model: user
-    //         }
-    //     ]
-    // }).then(data => {console.log(data)})
 };
 
 const update = (req, res) => {

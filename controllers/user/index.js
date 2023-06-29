@@ -17,39 +17,22 @@ const {todo} = require("../../db/models");
 // };
 
 const get = (req, res) => {
-  const { limit, offset } = req.query;
-  const id = req.headers.id
-  console.log(id)
 
-  // const where = name ? { name: { [Op.getLike()]: `%${name}%` } } : null;
+  const {id, ...other} = req.headers
+
 
       todoUser.findAll({
         include: [
             {
                 model: todo
             }
-        ]
+        ],where : {id}
     }).then(data => {
-      console.log(data.map((item) => item.toJSON()))
+      console.log(data)
+      const items = data.map((item) => item.toJSON())
+      res.send(items)
     })
 
-  // todoUser
-  //   .findAndCountAll({
-  //     include : [
-  //       {
-  //         model: todo
-  //       }
-  //     ],
-  //     where,
-  //     ...(limit ? { limit } : {}),
-  //     ...(offset ? { offset } : {}),
-  //   })
-  //   .then((data) => {
-  //     res.send(data);
-  //   })
-  //   .catch((err) => {
-  //     res.status(500).send(err);
-  //   });
 };
 
 const update = (req, res) => {
