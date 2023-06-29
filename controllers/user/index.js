@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
 const { todoUser } = require("../../db/models");
-const todo = require("../../db/models/todo");
+const {todo} = require("../../db/models");
 // const { checkVal } = require("../../utils");
 
 // const getURI = (req, res) => {
@@ -29,7 +29,9 @@ const get = (req, res) => {
                 model: todo
             }
         ]
-    }).then(data => {console.log(data)})
+    }).then(data => {
+      console.log(data.map((item) => item.toJSON()))
+    })
 
   // todoUser
   //   .findAndCountAll({
