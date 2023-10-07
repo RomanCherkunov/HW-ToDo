@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
-const { todoUser } = require("../../db/models");
-const {todo} = require("../../db/models");
+const { todoUser } = require("../../../db/models");
+const {todo} = require("../../../db/models");
 // const { checkVal } = require("../../utils");
 
 // const getURI = (req, res) => {
@@ -21,10 +21,11 @@ const get = (req, res) => {
   const {id, ...other} = req.headers
 
 
-      todoUser.findAll({
+      todoUser.findAll({attributes: {exclude: 'deletedAt'},
         include: [
             {
                 model: todo,
+                attributes: {exclude: 'deletedAt'},
                 where : {todoUserId: id}
             }
         ]

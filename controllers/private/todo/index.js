@@ -1,5 +1,5 @@
 
-const { todo } = require("../../db/models");
+const { todo } = require("../../../db/models");
 
 // const { checkVal } = require("../../utils");
 
