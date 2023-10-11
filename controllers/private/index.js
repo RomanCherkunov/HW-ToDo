@@ -1,6 +1,7 @@
 const path = require("path");
 const file = require("file");
 const { Router } = require("express");
+const {jwtMiddleWare} = require('../../utils')
 
 const basename = path.basename(__filename);
 
@@ -49,6 +50,7 @@ findFile.forEach((item) => {
 
   if (typeof model === "function") {
     const router = Router();
+    router.use(jwtMiddleWare)
 
     const loadModel = model(router, modelName);
 

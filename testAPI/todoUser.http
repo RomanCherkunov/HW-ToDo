@@ -1,5 +1,6 @@
 GET http://localhost:8989/user
 id: 6
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsIm5hbWUiOiJQaXBpc2thIn0.YHlQx7haAPsPhOdd0w8AhFzEaoIte0mYAMlCpd9nVA4
 
 
 ###
