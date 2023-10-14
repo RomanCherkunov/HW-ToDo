@@ -63,6 +63,14 @@
                     "field": "name",
                     "seqType": "Sequelize.TEXT"
                 },
+                "login": {
+                    "field": "login",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "password": {
+                    "field": "password",
+                    "seqType": "Sequelize.TEXT"
+                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
@@ -84,5 +92,5 @@
     "path": "C:\\Program Files (x86)\\Reference Assemblies\\MSProjects\\sacred\\homeworks\\HW-ToDo\\db\\migrations\\_current.json",
     "backupPath": "C:\\Program Files (x86)\\Reference Assemblies\\MSProjects\\sacred\\homeworks\\HW-ToDo\\db\\migrations\\_current_bak.json",
     "exists": true,
-    "revision": 5
+    "revision": 6
 }

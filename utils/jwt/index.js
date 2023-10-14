@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken");
 const models = require("../../db/models");
+const config = require('../../config/config.json')
 
 
-const jwtSecret = "123";
+ const jwtSecret = config?.jwtSecret || '123'
 
 const jwtCreate = (data) => jwt.sign(data, jwtSecret, { noTimestamp: true });
 
@@ -18,7 +19,7 @@ const jwtValidate = (token) => {
 const jwtMiddleWare = async (req, res, next) => {
   const { authorization } = req.headers;
 
-  console.log("check auth  ", req.headers);
+  // console.log("check auth  ", req.headers);
 
   if (!authorization || !jwtValidate(authorization)) {
     res.status(401).send("user not found");

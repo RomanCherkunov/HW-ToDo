@@ -11,6 +11,13 @@ myEvents.on("roman", () => {
   console.log("roman event 2");
 });
 
+myEvents.on("wsData", ({data, send}) => {
+  send('pong:  ' + data)
+});
+myEvents.on("wsData", ({data, send}) => {
+  send('pong 1 more :  ' + data)
+});
+
 
 process.myEvents = myEvents
 

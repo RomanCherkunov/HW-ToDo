@@ -76,17 +76,6 @@
                 "deletedAt": {
                     "field": "deletedAt",
                     "seqType": "Sequelize.DATE"
-                },
-                "todoId": {
-                    "allowNull": true,
-                    "references": {
-                        "model": "todos",
-                        "key": "id"
-                    },
-                    "onDelete": "CASCADE",
-                    "onUpdate": "NO ACTION",
-                    "field": "todoId",
-                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []
@@ -95,5 +84,5 @@
     "path": "C:\\Program Files (x86)\\Reference Assemblies\\MSProjects\\sacred\\homeworks\\HW-ToDo\\db\\migrations\\_current.json",
     "backupPath": "C:\\Program Files (x86)\\Reference Assemblies\\MSProjects\\sacred\\homeworks\\HW-ToDo\\db\\migrations\\_current_bak.json",
     "exists": true,
-    "revision": 4
+    "revision": 5
 }
